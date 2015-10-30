@@ -5,30 +5,12 @@
     <meta name="viewport"
           content="width=320, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <title>Kiddcn</title>
-    <link type="text/css" rel="stylesheet" href="./bootstrap/css/bootstrap.min.css"/>
-    <link type="text/css" rel="stylesheet" href="./bootstrap/css/bootstrap-theme.min.css"/>
+    <link type="text/css" rel="stylesheet" href="./public/bootstrap/css/bootstrap.min.css"/>
+    <link type="text/css" rel="stylesheet" href="./public/bootstrap/css/bootstrap-theme.min.css"/>
+    <link type="text/css" rel="stylesheet" href="./public/css/common.css"/>
     <script src="./jquery.min.js"></script>
-    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <script src="./public/bootstrap/js/bootstrap.min.js"></script>
     <style type="text/css">
-        body{
-            font-family:微软雅黑, arial;
-        }
-        .main-banner{
-            height:200px;
-            line-height: 200px;
-            font-size:36px;
-            background: url('./images/main.png') center no-repeat #2c7fff;
-            background-size: cover;
-            color:#fff;
-            text-align: center;
-        }
-        .btn{
-            cursor:pointer;
-            display: inline-block;
-            padding:0 10px;
-            line-height: 30px;text-align: center;
-        }
-
         .enterList{
         }
 
@@ -49,20 +31,16 @@
     </style>
 </head>
 <body>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12 main-banner">
-            7哥的个人主页
-        </div>
-    </div>
+<div class="col-md-12 header">
+    7哥的个人主页
 </div>
-<div class="container-fluid">
+<div class="main container-fluid">
     <div class="row enterList">
         <div class="col-md-3 item">
             <a class="btn">项目</a>
         </div>
         <div class="col-md-3 item">
-            <a class="btn">示例</a>
+            <a class="btn" href="./demos/index.html">示例</a>
         </div>
         <div class="col-md-3 item">
             <a class="btn">教程</a>
@@ -72,5 +50,6 @@
         </div>
     </div>
 </div>
+<div class="footer"></div>
 </body>
 </html>
