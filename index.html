@@ -1,55 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport"
-          content="width=320, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-    <title>Kiddcn</title>
-    <link type="text/css" rel="stylesheet" href="./public/bootstrap/css/bootstrap.min.css"/>
-    <link type="text/css" rel="stylesheet" href="./public/bootstrap/css/bootstrap-theme.min.css"/>
-    <link type="text/css" rel="stylesheet" href="./public/css/common.css"/>
-    <script src="./jquery.min.js"></script>
-    <script src="./public/bootstrap/js/bootstrap.min.js"></script>
-    <style type="text/css">
-        .enterList{
-        }
-
-        .enterList .item{
-            text-align: center;
-            padding:10px;
-        }
-
-        .enterList .item .btn{
-            line-height: 100px;
-            border-radius:15px;
-            padding:0;
-            background-color: #58ced5;
-            color:#fff;
-            width:100%;
-            font-size:20px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KiddCn7哥的demo</title>
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<div class="col-md-12 header">
-    7哥的个人主页
-</div>
-<div class="main container-fluid">
-    <div class="row enterList">
-        <div class="col-md-3 item">
-            <a class="btn" href="./projects/index.html">项目</a>
-        </div>
-        <div class="col-md-3 item">
-            <a class="btn" href="./demos/index.html">示例</a>
-        </div>
-        <div class="col-md-3 item">
-            <a class="btn">教程</a>
-        </div>
-        <div class="col-md-3 item">
-            <a class="btn">资源</a>
-        </div>
+<div class="container-fluid">
+    <ul class="nav nav-tabs nav-justified">
+        <li role="presentation" class="active"><a href="#home">Home</a></li>
+        <li role="presentation"><a href="#love">My Love</a></li>
+        <li role="presentation"><a href="#message">Messages</a></li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="home">...</div>
+        <div role="tabpanel" class="tab-pane" id="love">OKGOOD</div>
+        <div role="tabpanel" class="tab-pane" id="messages">..megaaaasfa.</div>
     </div>
 </div>
-<div class="footer"></div>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
