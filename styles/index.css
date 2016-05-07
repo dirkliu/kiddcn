@@ -1,0 +1,69 @@
+* {
+  font-family: "microsoft yahei"; }
+
+header {
+  padding: 30px 0;
+  background-color: #39f;
+  background: -webkit-linear-gradient(left, #f00 0%, #ff0 20%, #0f0 50%, #0ff 65%, #00f 80%, #f0f 100%);
+  background: -o-linear-gradient(left, #f00 0%, #ff0 20%, #0f0 50%, #0ff 65%, #00f 80%, #f0f 100%);
+  background: -ms-linear-gradient(left, #f00 0%, #ff0 20%, #0f0 50%, #0ff 65%, #00f 80%, #f0f 100%);
+  background: linear-gradient(left, #f00 0%, #ff0 20%, #0f0 50%, #0ff 65%, #00f 80%, #f0f 100%); }
+  header h1 {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    color: #fff; }
+
+.face {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  border: 10px solid #000;
+  border-radius: 50%;
+  transform: scale(0.95, 1);
+  -ms-transform: scale(0.95, 1);
+  /* IE 9 */
+  -webkit-transform: scale(0.95, 1);
+  /* Safari and Chrome */
+  position: relative; }
+  .face .eye {
+    width: 75px;
+    height: 50px;
+    border: 2px solid #000;
+    position: absolute;
+    top: 75px;
+    transform: scale(1, 0.5);
+    -ms-transform: scale(1, 0.5);
+    /* IE 9 */
+    -webkit-transform: scale(1, 0.5);
+    /* Safari and Chrome */
+    border-radius: 50%; }
+    .face .eye.l {
+      left: 30px; }
+    .face .eye.r {
+      right: 30px; }
+  .face .mouse {
+    width: 100px;
+    height: 50px;
+    border: 2px solid #000;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -50px;
+    border-top: none;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    transform: scale(1, 0.5);
+    -ms-transform: scale(1, 0.5);
+    /* IE 9 */
+    -webkit-transform: scale(1, 0.5);
+    /* Safari and Chrome */ }
+
+footer {
+  line-height: 50px;
+  color: #000;
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center; }
+
+/*# sourceMappingURL=index.css.map */
