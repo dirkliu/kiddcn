@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7哥的canvas文字</title>
+    <style type="text/css">
+        *{
+            padding:0;
+            margin:0;
+        }
+        canvas{
+            background-color: #999;
+        }
+    </style>
+</head>
+<body>
+<canvas id="text" width="400" height="400"></canvas>
+<script>
+    var clock=document.getElementById('text');
+    var ctx=clock.getContext('2d');
+    ctx.translate(200,200);
+    ctx.font="bold 40px Arial";
+    ctx.fillStyle="#f00";
+    ctx.textAlign='left';
+    ctx.textBaseline ='top';
+    ctx.fillText('I Love You!',0,0);
+    ctx.rotate(0.5*Math.PI);
+
+
+    var width = ctx.measureText('Hello world').width;
+    console.log('width:',width);
+</script>
+</body>
+</html>

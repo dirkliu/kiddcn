@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7哥的canvas时钟</title>
+    <style type="text/css">
+        canvas{
+            margin:0 auto;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="clock" width="400" height="400"></canvas>
+    <script>
+        var clock=document.getElementById('clock');
+        var ctx=clock.getContext('2d');
+
+       ctx.translate(200,200);
+
+        ctx.lineWidth=5;
+        ctx.strokeStyle="#000";
+        ctx.arc(0,0,195,0,2*Math.PI);
+        ctx.stroke();
+
+        //绘制时钟刻度；
+        ctx.lineWidth=3;
+        ctx.strokeStyle="#333";
+        ctx.beginPath();
+        for(var i=0;i<12;i++){
+            ctx.rotate(30*Math.PI/180);
+            ctx.moveTo(0,-180);
+            ctx.lineTo(0,-194);
+        }
+        ctx.stroke();
+        ctx.closePath();
+
+        //绘制小刻度
+        ctx.lineWidth=1;
+        ctx.strokeStyle="#999";
+        ctx.beginPath();
+        for(var i=0;i<60;i++){
+            ctx.rotate(6*Math.PI/180);
+            if(i%5==4){
+                continue;
+            }
+            ctx.moveTo(0,-185);
+            ctx.lineTo(0,-194);
+        }
+        ctx.stroke();
+        ctx.closePath();
+
+        ctx.fillStyle="#333";
+        ctx.arc(0,0,10,0,2*Math.PI);
+        ctx.fill();
+
+        ctx.font = '20px Arial';
+        ctx.fillStyle="#333";
+        ctx.textAlign='center';
+        ctx.textBaseline='middle';
+        for(var i=1;i<13;i++){
+            var angle=-90+30*i;
+            ctx.fillText(''+i,165*Math.cos(angle/180*Math.PI),165*Math.sin(angle/180*Math.PI));
+        }
+    </script>
+</body>
+</html>

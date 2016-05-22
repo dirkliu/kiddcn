@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7哥的canvas 线条</title>
+</head>
+<body>
+<canvas id="clock" width="800" height="800"></canvas>
+<script>
+    var clock=document.getElementById('clock');
+    var ctx=clock.getContext('2d');
+
+    ctx.lineWidth=1;
+    ctx.strokeStyle="#33f";
+    ctx.beginPath();
+    ctx.moveTo(10,10);
+    ctx.lineTo(60,60);
+    ctx.lineTo(10,60);
+    ctx.lineTo(10,10);
+
+    ctx.moveTo(70,10);
+    ctx.lineTo(120,10);
+    ctx.lineTo(120,60);
+    ctx.lineTo(70,60);
+    ctx.lineTo(70,10);
+
+    ctx.moveTo(130,35);
+    ctx.lineTo(180,10);
+    ctx.lineTo(230,35);
+    ctx.lineTo(180,60);
+    ctx.lineTo(130,35);
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    //ctx.moveTo(265,35);
+    ctx.arc(265,35,25,0,2*Math.PI);
+    ctx.stroke();
+    ctx.closePath();
+</script>
+</body>
+</html>

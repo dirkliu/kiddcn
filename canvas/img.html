@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7哥的canvas加载图片</title>
+</head>
+<body>
+<canvas id="clock" width="800" height="800"></canvas>
+<script>
+    var clock=document.getElementById('clock');
+    var ctx=clock.getContext('2d');
+    var img=new Image();
+    img.src='../images/b.gif';
+
+    img.onload=function(){
+        ctx.drawImage(img,0,0);
+        ctx.rotate(30*Math.PI/180);
+    };
+</script>
+</body>
+</html>
