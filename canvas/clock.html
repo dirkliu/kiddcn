@@ -12,55 +12,102 @@
 <body>
     <canvas id="clock" width="400" height="400"></canvas>
     <script>
-        var clock=document.getElementById('clock');
-        var ctx=clock.getContext('2d');
-
-       ctx.translate(200,200);
-
-        ctx.lineWidth=5;
-        ctx.strokeStyle="#000";
-        ctx.arc(0,0,195,0,2*Math.PI);
-        ctx.stroke();
-
-        //绘制时钟刻度；
-        ctx.lineWidth=3;
-        ctx.strokeStyle="#333";
-        ctx.beginPath();
-        for(var i=0;i<12;i++){
-            ctx.rotate(30*Math.PI/180);
-            ctx.moveTo(0,-180);
-            ctx.lineTo(0,-194);
+        function Clock(){
+            this.ele=document.getElementById('clock');
+            this.ctx=this.ele.getContext('2d');
         }
-        ctx.stroke();
-        ctx.closePath();
 
-        //绘制小刻度
-        ctx.lineWidth=1;
-        ctx.strokeStyle="#999";
-        ctx.beginPath();
-        for(var i=0;i<60;i++){
-            ctx.rotate(6*Math.PI/180);
-            if(i%5==4){
-                continue;
+        Clock.prototype.run=function(){
+            this.ctx.translate(200,200);
+            this.paintPlate();
+            this.paintPointer();
+        }
+
+        Clock.prototype.paintPlate=function(){
+            this.ctx.lineWidth=5;
+            this.ctx.strokeStyle="#000";
+            this.ctx.arc(0,0,195,0,2*Math.PI);
+            this.ctx.stroke();
+
+            //绘制时钟刻度；
+            this.ctx.lineWidth=3;
+            this.ctx.strokeStyle="#333";
+            this.ctx.beginPath();
+            for(var i=0;i<12;i++){
+                this.ctx.rotate(30*Math.PI/180);
+                this.ctx.moveTo(0,-180);
+                this.ctx.lineTo(0,-194);
             }
-            ctx.moveTo(0,-185);
-            ctx.lineTo(0,-194);
-        }
-        ctx.stroke();
-        ctx.closePath();
+            this.ctx.stroke();
+            this.ctx.closePath();
 
-        ctx.fillStyle="#333";
-        ctx.arc(0,0,10,0,2*Math.PI);
-        ctx.fill();
+            //绘制小刻度
+            this.ctx.lineWidth=1;
+            this.ctx.strokeStyle="#999";
+            this.ctx.beginPath();
+            for(var i=0;i<60;i++){
+                this.ctx.rotate(6*Math.PI/180);
+                if(i%5==4){
+                    continue;
+                }
+                this.ctx.moveTo(0,-185);
+                this.ctx.lineTo(0,-194);
+            }
+            this.ctx.stroke();
+            this.ctx.closePath();
 
-        ctx.font = '20px Arial';
-        ctx.fillStyle="#333";
-        ctx.textAlign='center';
-        ctx.textBaseline='middle';
-        for(var i=1;i<13;i++){
-            var angle=-90+30*i;
-            ctx.fillText(''+i,165*Math.cos(angle/180*Math.PI),165*Math.sin(angle/180*Math.PI));
+            this.ctx.font = '20px Arial';
+            this.ctx.fillStyle="#333";
+            this.ctx.textAlign='center';
+            this.ctx.textBaseline='middle';
+            for(var i=1;i<13;i++){
+                var angle=-90+30*i;
+                this.ctx.fillText(''+i,165*Math.cos(angle/180*Math.PI),165*Math.sin(angle/180*Math.PI));
+            }
         }
+
+        Clock.prototype.paintPointer=function(){
+            //绘制时针；
+            this.ctx.lineWidth=8;
+            this.ctx.strokeStyle="#333";
+            this.ctx.beginPath();
+            this.ctx.moveTo(0,15);
+            this.ctx.lineTo(0,-90);
+            this.ctx.stroke();
+            this.ctx.closePath();
+
+            //绘制分针
+            this.ctx.save();
+            this.ctx.lineWidth=5;
+            this.ctx.strokeStyle="#0f0";
+            this.ctx.rotate(45*Math.PI/180);
+            this.ctx.beginPath();
+            this.ctx.moveTo(0,15);
+            this.ctx.lineTo(0,-135);
+            this.ctx.stroke();
+            this.ctx.closePath();
+            this.ctx.restore();
+
+            //绘制秒针
+            this.ctx.save();
+            this.ctx.lineWidth=3;
+            this.ctx.strokeStyle="#00f";
+            this.ctx.rotate(135*Math.PI/180);
+            this.ctx.beginPath();
+            this.ctx.moveTo(0,15);
+            this.ctx.lineTo(0,-165);
+            this.ctx.stroke();
+            this.ctx.closePath();
+            this.ctx.stroke();
+            this.ctx.restore();
+
+            this.ctx.fillStyle="#333";
+            this.ctx.arc(0,0,10,0,2*Math.PI);
+            this.ctx.fill();
+        }
+
+        var clock=new Clock();
+        clock.run();
     </script>
 </body>
 </html>
