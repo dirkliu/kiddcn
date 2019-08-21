@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS demo</title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .pop {
+    width: 200px;
+    height: 200px;
+    box-sizing: border-box;
+    position: relative;
+      }
+      .pop-content {
+    background-color: #f93;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+      }
+      .pop::before {
+        content: '';
+        width: 200px;
+        height: 200px;
+        background-color: #39f;
+        display: block;
+        transform: rotate(45deg);
+      }
+      .pop::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: #3f9;
+    transform: rotate(45deg);
+    bottom: 0;
+    position: absolute;
+    left: 50%;
+    z-index: 0;
+      }
+      .main-box {
+        padding: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-box">
+      <div class="pop">
+        <div class="pop-content"></div>
+      </div>
+    </div>
+  </body>
+</html>

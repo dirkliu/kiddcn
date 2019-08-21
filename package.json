@@ -1,0 +1,30 @@
+{
+  "name": "kiddcn",
+  "version": "1.0.0",
+  "description": "Kidd",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dirkliu/kiddcn.git"
+  },
+  "keywords": [
+    "kidd"
+  ],
+  "author": "Kidd",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dirkliu/kiddcn/issues"
+  },
+  "homepage": "https://github.com/dirkliu/kiddcn#readme",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0-beta.2",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.12.0"
+  }
+}
