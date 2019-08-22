@@ -21,6 +21,7 @@
   "homepage": "https://github.com/dirkliu/kiddcn#readme",
   "devDependencies": {
     "@babel/core": "^7.5.5",
+    "express": "^4.17.1",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0-beta.2",
     "gulp-clean-css": "^4.2.0",
