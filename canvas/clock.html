@@ -15,8 +15,15 @@
     <canvas id="clock" width="400" height="400"></canvas>
     <script>
         function Clock(){
-            this.ele=document.getElementById('clock');
-            this.ctx=this.ele.getContext('2d');
+            this.ele =document.getElementById('clock');
+            //  计算画布的宽度
+            var width = this.ele.offsetWidth;
+            //  计算画布的高度
+            var height = this.ele.offsetHeight;
+            this.ctx = this.ele.getContext('2d');
+            //  设置宽高
+            this.ctx.width = width;
+            this.ctx.height = height;
         }
 
         Clock.prototype.run=function(){
