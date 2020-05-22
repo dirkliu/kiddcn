@@ -7,6 +7,7 @@ import Icons from '../app/icons/Icons.vue'
 const Login = () => import('../app/welcome/Login.vue')
 const Chat = () => import('../app/chat/Chat.vue')
 const Home = () => import('../app/home/Home.vue')
+const Lottery = () => import('../app/lottery/Lottery.vue')
 
 Vue.use(Router)
 
@@ -32,6 +33,10 @@ export default new Router({
     	path: '/chat',
     	name: 'chat',
     	component: Chat
+    }, {
+      path: '/lottery',
+      name: 'lottery',
+      component: Lottery
     }
   ]
 })
