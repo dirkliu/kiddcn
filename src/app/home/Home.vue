@@ -10,6 +10,8 @@
       	<li><a href="/#/clock">canvas时钟</a></li>
       	<li><a href="/#/icons">css绘制图标</a></li>
       	<li><a href="/#/chat">websockets</a></li>
+        <li><a href="/#/chat">websockets</a></li>
+        <li><a href="/#/lottery">抽奖转盘</a></li>
     	</ul>
   	</article>
   	<div class="footer">
