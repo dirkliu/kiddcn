@@ -2,6 +2,7 @@
 	<div class="home">
   	<div class="header">
     	<h1>KiddCn 一条码虫的实验工厂</h1>
+      <button type="button" id="downloadBtn" @click="onDownload">下载</button>
   	</div>
   	<article class="main">
     	<h1>计划中的事情：</h1>
@@ -21,7 +22,21 @@
 	export default {
 		data () {
 			return {}
-		}
+		},
+
+    methods: {
+      onDownload () {
+        const blob = new Blob(['\ufeff', 'abcde你好'], {
+          type: 'text/csv;'
+        })
+        const url = URL.createObjectURL(blob)
+        const a = document.createElement('a')
+        a.href = url
+        a.download = 'test_' + Date.now() + '.csv'
+        a.click()
+        URL.revokeObjectURL(url)        
+      }
+    }
 	}
 </script>
 
